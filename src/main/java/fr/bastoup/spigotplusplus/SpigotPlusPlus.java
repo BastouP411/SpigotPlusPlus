@@ -1,8 +1,8 @@
-package fr.bastoup.spigotpp;
+package fr.bastoup.spigotplusplus;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class SpigotPP extends JavaPlugin {
+public class SpigotPlusPlus extends JavaPlugin {
     @Override
     public void onEnable() {
         super.onEnable();

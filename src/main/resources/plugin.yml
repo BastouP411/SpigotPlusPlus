@@ -1,5 +1,4 @@
-name: Spigot++
-version: ${version}
+name: SpigotPlusPlus
+version: 0.1-SNAPSHOT
 author: BastouP
-main: fr.bastoup.spigotpp.SpigotPP
-api-version: 1.16.3
+main: fr.bastoup.spigotplusplus.SpigotPlusPlus
