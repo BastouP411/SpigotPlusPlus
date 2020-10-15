@@ -1,0 +1,5 @@
+name: Spigot++
+version: ${version}
+author: BastouP
+main: fr.bastoup.spigotpp.SpigotPP
+api-version: 1.16.3
