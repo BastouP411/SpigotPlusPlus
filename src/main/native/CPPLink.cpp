@@ -1,10 +1,7 @@
 #include <jni.h>
 #include <iostream>
-#include "CPPLink.h"
 
-
-JNIEXPORT void JNICALL Java_fr_bastoup_spigotplusplus_link_CPPLink_loadPlugin(JNIEnv *env, jobject thisObj) {
-    std::cout << "Test" << std::endl;
+JNIEXPORT void JNICALL Java_fr_bastoup_spigotplusplus_link_CPPLink_loadPlugin (JNIEnv *env, jclass obj, jstring str) {
+    std::cout << "Bonjour" << std::endl;
     return;
 }
-

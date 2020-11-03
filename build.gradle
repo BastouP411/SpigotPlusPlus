@@ -16,11 +16,8 @@ dependencies {
     implementation "org.spigotmc:spigot-api:1.16.3-R0.1-SNAPSHOT"
 }
 
-
-
 tasks.named('jar') {
     manifest {
         attributes('Implementation-Title': project.name, 'Implementation-Version': project.version)
     }
-    destinationDir = file("$rootDir/../MinecraftUtils/server/plugins")
 }
