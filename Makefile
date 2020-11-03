@@ -98,7 +98,7 @@ mac32: jni-header
 sparcv9:
 	$(MAKE) native OS_NAME=SunOS OS_ARCH=sparcv9
 
-package: native
+package: native-all
 	$(GRADLE) assemble
 
 clean-native:
