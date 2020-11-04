@@ -1,4 +1,6 @@
-sudo: true
+before_script: chmod a=rwx ./scripts/travis_deploy.sh
+
+sudo: false
 os: linux
 dist: trusty
 
