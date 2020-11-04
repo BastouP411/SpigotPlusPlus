@@ -1,4 +1,10 @@
-before_script: chmod a=rwx ./scripts/travis_deploy.sh
+before_script:
+  - chmod a=rwx ./scripts/travis_deploy.sh
+  - wget http://services.gradle.org/distributions/gradle-6.7-bin.zip
+  - unzip -qq gradle-6.7-bin.zip
+  - export GRADLE_HOME=$PWD/gradle-6.7
+  - export PATH=$GRADLE_HOME/bin:$PATH
+  - gradle -v
 
 sudo: false
 os: linux
