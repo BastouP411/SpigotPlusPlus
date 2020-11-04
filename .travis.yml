@@ -1,0 +1,14 @@
+sudo: false
+os: linux
+dist: trusty
+
+services:
+  - docker
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+script:
+  - ./scripts/travis_deploy.sh
