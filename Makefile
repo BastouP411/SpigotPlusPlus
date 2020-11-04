@@ -8,7 +8,7 @@ all: jni-header package
 
 MKDIR_P:=mkdir -p
 CP:=cp
-GRADLE:=gradle
+GRADLE:=./gradlew
 SRC:=src/main
 CPPLINK_OUT:=$(TARGET)/native/$(cpplink)-$(OS_NAME)-$(OS_ARCH)
 CPPLINK_BUILD:=$(CPPLINK_OUT)/$(LIBNAME)
