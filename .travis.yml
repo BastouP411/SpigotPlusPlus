@@ -1,6 +1,5 @@
 before_script:
   - chmod a=rwx ./scripts/travis_deploy.sh
-  - apt-get install gcc-multilib g++-multilib
 
 sudo: false
 os: linux
