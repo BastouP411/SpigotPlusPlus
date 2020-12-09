@@ -104,7 +104,7 @@ public class OSInfo
     }
 
     public static String getNativeLibFolderPathForCurrentOS() {
-        return getOSName() + "/" + getArchName();
+        return "/native/" + getOSName() + "/" + getArchName();
     }
 
     public static String getOSName() {
