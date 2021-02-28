@@ -13,9 +13,9 @@ OSINFO_CLASS := fr.bastoup.spigotplusplus.util.OSInfo
 OSINFO_PROG := lib/fr/bastoup/spigotplusplus/util/OSInfo.class
 
 # building OSInfo.java
-$(info compiling OSInfo.java)
-$(shell mkdir -p lib)
-$(shell $(JAVAC) src/main/java/fr/bastoup/spigotplusplus/util/OSInfo.java -d lib)
+#$(info compiling OSInfo.java)
+#$(shell mkdir -p lib)
+#$(shell $(JAVAC) src/main/java/fr/bastoup/spigotplusplus/util/OSInfo.java -d lib)
 
 ifndef OS_NAME
 OS_NAME := $(shell $(JAVA) -cp lib $(OSINFO_CLASS) --os)

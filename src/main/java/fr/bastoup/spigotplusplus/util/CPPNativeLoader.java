@@ -55,6 +55,7 @@ public class CPPNativeLoader {
             os.close();
 
             System.load(file.getAbsolutePath());
+
             return true;
         } catch (IOException e) {
             e.printStackTrace();

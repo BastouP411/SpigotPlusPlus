@@ -12,10 +12,10 @@ GRADLE:=./gradlew
 SRC:=src/main
 CPPLINK_OUT:=$(TARGET)/native/$(cpplink)-$(OS_NAME)-$(OS_ARCH)
 CPPLINK_BUILD:=$(CPPLINK_OUT)/$(LIBNAME)
-OBJS:=$(patsubst $(SRC)/native/library/%.cpp,%.o,$(wildcard $(SRC)/native/library/*.cpp))
+OBJS:=$(patsubst $(SRC)/native/cpplink/%.cpp,$(CPPLINK_OUT)/object/%.o,$(wildcard $(SRC)/native/cpplink/*.cpp))
 HEADERS:=lib/headers
 
-CCFLAGS:= -I$(HEADERS) -I$(CPPLINK_OUT) $(CCFLAGS)
+CCFLAGS:= -I$(HEADERS) -I$(CPPLINK_OUT) -I$(SRC)/native/headers/ $(CCFLAGS)
 
 
 NATIVE_DIR=$(RESOURCE_DIR)/native/$(OS_NAME)/$(OS_ARCH)
@@ -35,11 +35,13 @@ test:
 
 clean: clean-native clean-java
 
-%.o: $(SRC)/native/library/%.cpp
-	$(CC) $(CCFLAGS) -c -o $(SQLITE_OUT)/object/$@ $<
+$(CPPLINK_OUT)/object:
+	$(MKDIR_P) $(CPPLINK_OUT)/object
+
+$(CPPLINK_OUT)/object/%.o: $(SRC)/native/cpplink/%.cpp $(CPPLINK_OUT)/object
+	$(CC) $(CCFLAGS) -c -o $@ $<
 
 $(CPPLINK_OUT)/$(LIBNAME): $(SRC)/native/CPPLink.cpp $(OBJS)
-	$(MKDIR_P) $(CPPLINK_OUT)/object
 	$(CC) $(CCFLAGS) -c -o $(CPPLINK_OUT)/object/CPPLink.o $(SRC)/native/CPPLink.cpp
 	$(CC) $(CCFLAGS) -o $(CPPLINK_BUILD) $(CPPLINK_OUT)/object/CPPLink.o $(OBJS) $(LINKFLAGS)
 	$(MKDIR_P) $(NATIVE_DIR)
